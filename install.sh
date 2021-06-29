@@ -1,1 +1,1 @@
-docker run -it --name alpine-custom mane1docker/alpine-custom /bin/bash
+docker run -it --name alpine-custom mane1docker/alpine-custom:latest /bin/bash
