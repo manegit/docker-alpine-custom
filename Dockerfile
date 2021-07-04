@@ -28,7 +28,7 @@ RUN adduser \
 
 RUN echo "$USER:$USER" | chpasswd && echo '%wheel ALL=(ALL) ALL' > /etc/sudoers.d/wheel && adduser $USER wheel
 
-COPY .alias .bashrc /home/$USER/
+COPY .alias .bashrc .newsboat/urls /home/$USER/
 
 USER $USER
 WORKDIR /home/$USER
