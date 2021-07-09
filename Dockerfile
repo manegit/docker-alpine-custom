@@ -28,10 +28,20 @@ RUN adduser \
 
 RUN echo "$USER:$USER" | chpasswd && echo '%wheel ALL=(ALL) ALL' > /etc/sudoers.d/wheel && adduser $USER wheel
 
-COPY .alias .bashrc .newsboat/urls /home/$USER/
+#COPY .alias .bashrc /home/$USER/
+#COPY .newsboat/urls /home/$USER/.newsboat/
+
+COPY homedir.tar.gz /home/$USER/
+#RUN gunzip /home/$USER/homedir.tar.gz && tar -xvf /home/$USER/homedir.tar . && \
+#rm /home/$USER/homedir.tar && \
+#chown -R $USER:users /home/$USER/
 
 USER $USER
 WORKDIR /home/$USER
+
+RUN gunzip homedir.tar.gz && tar -xvf homedir.tar . && \
+rm homedir.tar && \
+chown -R $USER:users .
 
 # run the applicationn
 CMD ["/bin/bash"]
