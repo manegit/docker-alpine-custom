@@ -5,7 +5,7 @@ ENV USER=alpine
 
 # Install packages
 RUN apk add --update py3-pip mc ncdu aria2 htop fd nano busybox \
-git lynx jq bc dos2unix gawk sed p7zip gzip markdown neofetch \
+git git-lfs lynx jq bc dos2unix gawk sed p7zip gzip markdown neofetch \
 tmux curl cmatrix w3m bash figlet nmap sudo emacs gnupg \
 mandoc man-pages less less-doc at newsboat libcaca-apps
 
@@ -28,13 +28,7 @@ RUN adduser \
 
 RUN echo "$USER:$USER" | chpasswd && echo '%wheel ALL=(ALL) ALL' > /etc/sudoers.d/wheel && adduser $USER wheel
 
-#COPY .alias .bashrc /home/$USER/
-#COPY .newsboat/urls /home/$USER/.newsboat/
-
 COPY homedir.tar.gz /home/$USER/
-#RUN gunzip /home/$USER/homedir.tar.gz && tar -xvf /home/$USER/homedir.tar . && \
-#rm /home/$USER/homedir.tar && \
-#chown -R $USER:users /home/$USER/
 
 USER $USER
 WORKDIR /home/$USER
