@@ -1,0 +1,4 @@
+# Todos
+
+* oh-my-zsh
+
