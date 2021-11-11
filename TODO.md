@@ -1,4 +1,6 @@
 # Todos
 
-* oh-my-zsh
+* oh-my-zsh (for root, too)
+  * download install script
+
 

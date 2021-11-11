@@ -22,7 +22,7 @@ RUN adduser \
     --home "/home/$USER" \
     --ingroup "users" \
     --shell "/bin/bash" \
-    --uid "1001" \
+    --uid "1000" \
     --system \
     "$USER"
 
@@ -30,6 +30,7 @@ RUN echo "$USER:$USER" | chpasswd && echo '%wheel ALL=(ALL) ALL' > /etc/sudoers.
 
 COPY homedir.tar.gz /home/$USER/
 
+# users
 USER $USER
 WORKDIR /home/$USER
 
