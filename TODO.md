@@ -1,6 +1,5 @@
 # Todos
 
-* oh-my-zsh (for root, too)
-  * download install script
-
-
+- [x] oh-my-zsh
+   - [x] download install script
+   - [ ] install plugins
