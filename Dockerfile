@@ -36,15 +36,15 @@ WORKDIR /home/$USER
 
 # Install oh-my-zsh
 RUN sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" && \
-cd $WORKDIR/.oh-my-zsh/custom/plugins && \
+cd .oh-my-zsh/custom/plugins && \
 git clone https://github.com/zsh-users/zsh-autosuggestions
 
 RUN gunzip homedir.tar.gz && tar -xvf homedir.tar . && \
 rm homedir.tar && \
 cat .zshrc2 >> .zshrc && \
 rm .zshrc2 && \
-./update-zshrc.sh && \
-rm update-zshrc.sh && \
+./update_zshrc.sh && \
+rm update_zshrc.sh && \
 chown -R $USER:users .
 
 # run the applicationn
