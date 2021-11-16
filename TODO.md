@@ -2,4 +2,4 @@
 
 - [x] oh-my-zsh
    - [x] download install script
-   - [ ] install plugins
+   - [x] install plugins
