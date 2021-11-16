@@ -7,7 +7,7 @@ ENV USER=alpine
 RUN apk add --update py3-pip mc ncdu aria2 htop fd nano busybox \
 git git-lfs lynx jq bc dos2unix gawk sed p7zip gzip markdown neofetch \
 tmux curl cmatrix w3m bash figlet nmap sudo emacs gnupg \
-mandoc man-pages less less-doc at newsboat libcaca-apps
+mandoc man-pages less less-doc at newsboat libcaca-apps zsh
 
 # upgrade pip
 RUN pip3 install --upgrade pip
@@ -22,7 +22,7 @@ RUN adduser \
     --home "/home/$USER" \
     --ingroup "users" \
     --shell "/bin/bash" \
-    --uid "1001" \
+    --uid "1000" \
     --system \
     "$USER"
 
@@ -30,12 +30,22 @@ RUN echo "$USER:$USER" | chpasswd && echo '%wheel ALL=(ALL) ALL' > /etc/sudoers.
 
 COPY homedir.tar.gz /home/$USER/
 
+# users
 USER $USER
 WORKDIR /home/$USER
 
+# Install oh-my-zsh
+RUN sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" && \
+cd .oh-my-zsh/custom/plugins && \
+git clone https://github.com/zsh-users/zsh-autosuggestions
+
 RUN gunzip homedir.tar.gz && tar -xvf homedir.tar . && \
 rm homedir.tar && \
+cat .zshrc2 >> .zshrc && \
+rm .zshrc2 && \
+./update_zshrc.sh && \
+rm update_zshrc.sh && \
 chown -R $USER:users .
 
 # run the applicationn
-CMD ["/bin/bash"]
+CMD ["/bin/zsh"]
