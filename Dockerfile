@@ -8,7 +8,9 @@ RUN apk add --update py3-pip mc ncdu aria2 htop fd nano busybox \
 git git-lfs lynx jq bc dos2unix gawk sed p7zip gzip markdown neofetch \
 tmux curl cmatrix w3m bash figlet nmap sudo emacs gnupg \
 mandoc man-pages less less-doc at newsboat libcaca-apps zsh sysbench \
-colordiff
+colordiff && \
+rm -rf /var/lib/apt/lists/* && \
+rm /var/cache/apk/*
 
 # upgrade pip
 RUN pip3 install --upgrade pip

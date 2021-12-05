@@ -1,5 +1,10 @@
 # Todos
 
-- [x] oh-my-zsh
-   - [x] download install script
-   - [x] install plugins
+- [ ] docker inside docker
+- [ ] ddgr
+
+---
+
+* `git clone https://github.com/jarun/ddgr.git`
+* `-v /var/run/docker.sock:/var/run/docker.sock`
+
