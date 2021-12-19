@@ -48,7 +48,8 @@ cat .zshrc2 >> .zshrc && \
 rm .zshrc2 && \
 ./update_zshrc.sh && \
 rm update_zshrc.sh && \
-curl -fsSL https://raw.githubusercontent.com/jarun/ddgr/main/ddgr && \
+curl -fsSL https://raw.githubusercontent.com/jarun/ddgr/main/ddgr > ddgr && \
+chmod u+x ddgr && \
 chown -R $USER:users .
 
 # run the applicationn
