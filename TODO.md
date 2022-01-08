@@ -1,7 +1,7 @@
 # Todos
 
-- [ ] docker inside docker
-- [ ] ddgr
+- [ ] docker inside docker, rights
+- [x] ddgr
 
 ---
 
