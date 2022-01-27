@@ -37,7 +37,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
-- name: build homedir.tar.gz
+      - name: build homedir.tar.gz
         run: |
           cd usrhomedir
           tar -zcvf ../homedir.tar .
