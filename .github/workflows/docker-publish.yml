@@ -37,6 +37,13 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
+      - name: build homedir.tar.gz
+        run: |     
+          cd usrhomedir
+          tar -zcvf ../homedir.tar .
+          cd ..
+          gzip homedir.tar
+
       # Install the cosign tool except on PR
       # https://github.com/sigstore/cosign-installer
       - name: Install cosign
