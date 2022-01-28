@@ -11,6 +11,9 @@ jobs:
     - name: Set up QEMU
       uses: docker/setup-qemu-action@v1
 
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
     - name: build homedir.tar.gz
       run: |
         cd usrhomedir
