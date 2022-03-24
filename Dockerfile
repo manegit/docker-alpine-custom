@@ -9,7 +9,7 @@ git git-lfs lynx jq bc dos2unix gawk sed p7zip gzip markdown neofetch \
 tmux curl cmatrix w3m bash figlet nmap sudo emacs gnupg file exiftool \
 mandoc man-pages less less-doc at newsboat libcaca-apps zsh tzdata \
 colordiff docker tor torsocks age subversion sqlite mediainfo && \
-lshw sysbench \
+sysbench \
 rm -rf /var/lib/apt/lists/* && \
 rm /var/cache/apk/*
 
