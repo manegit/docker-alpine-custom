@@ -1,6 +1,7 @@
 # Todos
 
-- [ ] timezone
+- [X] timezone
+- [ ] localization
 - [ ] gdrive
 
 ---
