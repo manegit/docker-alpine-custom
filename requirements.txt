@@ -1,3 +1,4 @@
 speedtest-cli
 pydf
 ranger-fm
+howdoi
