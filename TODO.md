@@ -2,7 +2,6 @@
 
 - [X] timezone
 - [ ] localization
-- [ ] gdrive
+- [ ] gdrive (https://github.com/prasmussen/gdrive/releases)
 
 ---
-
