@@ -1,2 +1,2 @@
 docker rm alpine-custom
-docker rmi mane1docker/alpine-custom:latest
+docker rmi ghcr.io/manegit/docker-alpine-custom:latest
