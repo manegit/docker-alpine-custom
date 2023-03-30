@@ -4,6 +4,6 @@
 
 tasks:
   - init: |
-      ./build.sh
+      ./build.sh && ./install.sh
 
 
