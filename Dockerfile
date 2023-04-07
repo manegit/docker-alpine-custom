@@ -5,11 +5,11 @@ ENV USER=alpine
 
 # Install packages
 RUN apk add --update py3-pip mc ncdu aria2 htop fd nano busybox \
-git git-lfs lynx jq bc dos2unix gawk sed p7zip gzip markdown neofetch \
+git git-lfs lynx jq yq bc dos2unix gawk sed p7zip gzip markdown neofetch \
 tmux curl cmatrix w3m bash figlet nmap sudo emacs gnupg file exiftool \
 mandoc man-pages less less-doc at newsboat libcaca-apps zsh tzdata \
 colordiff docker tor torsocks age subversion sqlite mediainfo rclone \
-sysbench lshw units buku && \
+sysbench lshw units buku vim && \
 rm -rf /var/lib/apt/lists/* && \
 rm /var/cache/apk/*
 
