@@ -9,16 +9,9 @@ git git-lfs lynx jq yq bc dos2unix gawk sed p7zip gzip markdown neofetch \
 tmux curl cmatrix w3m bash figlet nmap sudo emacs gnupg file exiftool \
 mandoc man-pages less less-doc at newsboat libcaca-apps zsh tzdata \
 colordiff docker tor torsocks age subversion sqlite mediainfo rclone \
-sysbench lshw units buku vim && \
+sysbench lshw units buku vim speedtest-cli ranger && \
 rm -rf /var/lib/apt/lists/* && \
 rm /var/cache/apk/*
-
-# upgrade pip
-RUN pip3 install --upgrade pip
-
-# install Python modules
-COPY requirements.txt /usr/src/py3/
-RUN pip3 install --no-cache-dir -r /usr/src/py3/requirements.txt
 
 RUN adduser \
     --disabled-password \
@@ -53,6 +46,8 @@ mkdir bin && \
 curl -fsSL https://raw.githubusercontent.com/jarun/ddgr/main/ddgr > bin/ddgr && \
 chmod u+x bin/* && \
 chown -R $USER:users .
+
+RUN source cenv.source && rm cenv.source
 
 # run the applicationn
 CMD ["/bin/zsh"]
